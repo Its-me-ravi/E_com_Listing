@@ -2,6 +2,12 @@ E-Commerce Product Listing (React + Vite)
 
 This is a simple e-commerce frontend built using React (Vite) and TailwindCSS. It fetches product data from a dummy API and displays products in a structured layout. Users can view product details and adjust quantity.
 
+<a href="https://e-com-listing.vercel.app/" target="_blank" rel="noopener noreferrer">
+  <button style={{ padding: '10px 20px', fontSize: '16px', cursor: 'pointer' }}>
+    Live Demo
+  </button>
+</a>
+
 🚀 Features
 
 Product Listing Page (/products)
@@ -38,7 +44,7 @@ API: DummyJSON
 
 Clone the repository:
 
-git clone https://github.com/your-username/ecommerce-vite.git
+git clone https://github.com/Its-me-ravi/E_com_Listing.git
 cd ecommerce-vite
 
 Install dependencies:
