@@ -10,7 +10,7 @@ This is a simple e-commerce frontend built using React (Vite) and TailwindCSS. I
 
 🚀 Features
 
-Product Listing Page (/products)
+Product Listing Page (/product)
 
 Fetch and display product categories & products from API
 
