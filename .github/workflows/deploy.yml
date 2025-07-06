@@ -1,4 +1,4 @@
-name: Azure Static Web App Deploy
+name: Azure CI/CD Deployment
 
 on:
   push:
@@ -13,20 +13,20 @@ jobs:
       - name: Checkout Code
         uses: actions/checkout@v3
 
-      - name: Setup Node
+      - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: 18
+          node-version: '18'
 
       - name: Install Dependencies
         run: npm install
 
-      - name: Build Project
+      - name: Build React App
         run: npm run build
 
       - name: Deploy to Azure Web App
         uses: azure/webapps-deploy@v2
         with:
-          app-name: 'ravikumar-portfolio'
+          app-name: 'ravikumar-portfolio'      # <-- This must be EXACT app name from Azure portal (NOT the long one with gvg8e3a0a8aceeav)
           publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE }}
           package: ./build
