@@ -1,4 +1,4 @@
-name: Azure CI/CD Deployment
+name: Azure Vite React Deploy
 
 on:
   push:
@@ -10,26 +10,26 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout Code
+      - name: 📥 Checkout code
         uses: actions/checkout@v3
 
-      - name: Setup Node.js
+      - name: 🔧 Setup Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: '18'   # <-- React supports Node 18 better
+          node-version: '18'
 
-      - name: Install Dependencies
+      - name: 📦 Install dependencies
         run: npm install
 
-      - name: Build React App
+      - name: 🏗️ Build Vite App
         run: npm run build
 
-      - name: List build folder contents (for debug)
-        run: ls -l ./build
+      - name: 📁 List dist directory (debug)
+        run: ls -l ./dist
 
-      - name: Deploy to Azure Web App
+      - name: 🚀 Deploy to Azure Web App
         uses: azure/webapps-deploy@v2
         with:
-          app-name: 'ravikumar-portfolio'
+          app-name: 'ravikumar-portfolio' # Your Azure Web App name
           publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE }}
-          package: ./build
+          package: ./dist
